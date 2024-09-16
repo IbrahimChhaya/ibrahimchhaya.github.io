@@ -1,6 +1,5 @@
-
 body {
-  margin: 0;
+  margin: 10px;
   height: 100%;
   font-family: sans-serif;
   color: #333d54;
@@ -10,6 +9,7 @@ body {
 .terminal-line {
   position: relative;
   color: #b0b2b6;
+  margin-bottom: 1rem;
 }
 
 .output {
@@ -24,6 +24,17 @@ body {
 
 .success {
   color: #8dd39e;
+}
+
+.code {
+  color: #4069f9;
+}
+
+.danger {
+  color: red;
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dummy-keyboard {

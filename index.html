@@ -3,25 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&nbsp;Custom Portfolio Terminal</title>
+    <title>Ibrahim Chhaya Terminal</title>
     <link rel="stylesheet" href="./src/styles.css" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="terminal-output" id="terminalOutput">
+      <div class="terminal-line">
+        <span class="help-msg">
+          Welcome to my terminal!
+          Type <span class="code">help</span> for a list of supported
+          commands.</span>
+        </span>
+        
+      </div>
+    </div>
     <div class="terminal-line">
-      <p>Microsoft Windows [Version 10.0.19045.4780] </p>
-      <p>(c) Microsoft Corporation. All rights reserved.</p>
-      <span class="success">➜</span>
+      <span class="success">user@ibrahimchhaya.com:</span>
       <span class="directory">~</span>
       <span class="user-input" id="userInput"></span>
-      <input
-        type="text"
-        id="dummyKeyboard"
-        class="dummy-keyboard"
-        autocomplete="off"
-        onkeydown="myFunction(event)" 
-        onblur="this.focus()"
-      />
     </div>
-    <script src="./src/index2.js"></script>
+    <script src="./src/index.js"></script>
   </body>
 </html>
