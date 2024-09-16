@@ -1,0 +1,64 @@
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  color: #333d54;
+  background-color: #0d0f17;
+}
+
+.terminal-line {
+  position: relative;
+  color: #b0b2b6;
+}
+
+.output {
+  margin-bottom: 1rem;
+  color: #b0b2b6;
+}
+
+.directory {
+  color: #75e1e7;
+  font-weight: 500;
+}
+
+.success {
+  color: #8dd39e;
+}
+
+.dummy-keyboard {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.user-input {
+  position: relative;
+}
+
+.user-input::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.844);
+  position: absolute;
+  top: 12px;
+  right: -10px;
+  animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .resume {
+    padding-bottom: 0.5rem;
+  }
+}
