@@ -6,6 +6,14 @@ body {
   background-color: #0d0f17;
 }
 
+a {
+  color: #6a88f6;
+}
+
+a:hover {
+  color: inherit;
+}
+
 .terminal-line {
   position: relative;
   color: #b0b2b6;
@@ -27,7 +35,7 @@ body {
 }
 
 .code {
-  color: #4069f9;
+  color: #6a88f6;
 }
 
 .danger {
