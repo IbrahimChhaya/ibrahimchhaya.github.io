@@ -8,7 +8,7 @@ document.onkeydown = function(event) {
     if(event.key == "Backspace" || event.key == "Delete") {
         userInput.innerHTML = userInput.innerHTML.slice(0, -1);
     }
-    if(event.key == "Enter") {
+    if(event.key == "Enter" && userInput.innerHTML != "") {
         executeCommand(userInput.innerHTML);
     }
 }
@@ -18,7 +18,7 @@ function executeCommand(input) {
 
     output = `<div class="terminal-line"><span class="success">user@ibrahimchhaya.com:</span>
       <span class="directory">~</span> ${input}</div>`;
-    if(!input in COMMANDS) {
+    if(!(input in COMMANDS)) {
         output += `<div class="terminal-line">no such command: <span class="output">"${input}"</span></div>`;
     }
     else {
