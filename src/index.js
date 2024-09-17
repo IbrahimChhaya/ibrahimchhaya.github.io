@@ -14,7 +14,7 @@ document.onkeydown = function(event) {
 }
 
 focusMethod = function getFocus() {           
-  document.getElementById("myTextField").focus();
+  document.getElementById("dummyInput").focus();
 }
 
 function executeCommand(input) {
