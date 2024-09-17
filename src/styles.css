@@ -14,6 +14,10 @@ a:hover {
   color: inherit;
 }
 
+.dummy-input {
+  opacity: 0;
+}
+
 .terminal-line {
   position: relative;
   color: #b0b2b6;
