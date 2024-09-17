@@ -13,6 +13,10 @@ document.onkeydown = function(event) {
     }
 }
 
+focusMethod = function getFocus() {           
+  document.getElementById("myTextField").focus();
+}
+
 function executeCommand(input) {
     input = input.toLowerCase();
 
