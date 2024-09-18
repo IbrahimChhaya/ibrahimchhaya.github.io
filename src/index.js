@@ -2,8 +2,10 @@ userInput = document.getElementById("userInput");
 terminalOutput = document.getElementById("terminalOutput");
 
 document.onkeydown = function(event) {
+  userInput.innerHTML += event.key;
     if(event.key.length == 1 && userInput.innerHTML.length != 30) {
         userInput.innerHTML += event.key;
+        console.log(event)
     }
     if(event.key == "Backspace" || event.key == "Delete") {
         userInput.innerHTML = userInput.innerHTML.slice(0, -1);
