@@ -81,7 +81,7 @@ function executeCommand(input) {
 const COMMANDS = {
     help:
       `Supported commands: ["<span class="code">about</span>", "<span class="code">experience</span>", "<span class="code">education</span>", 
-      "<span class="code">projects</span>", "<span class="code">skills</span>", "<span class="code">contact</span>]`,
+      "<span class="code">projects</span>", "<span class="code">skills</span>", "<span class="code">contact</span>"]`,
     about:
       `Hi! 👋<br>I'm Ibrahim Chhaya. I am a Privacy Engineering student at Carnegie Mellon University. I was previously a software engineer, 
       but still code for fun. Check out my <span class="code">projects</span>.`,
