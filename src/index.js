@@ -62,7 +62,7 @@ focusMethod = function getFocus() {
 function executeCommand(input) {
     input = input.toLowerCase();
 
-    output = `<div class="terminal-line"><span class="success">user@ibrahimchhaya.com:</span>
+    output = `<div class="terminal-line"><span class="code">user@ibrahimchhaya.com:</span>
       <span class="directory">~</span> ${input}</div>`;
     if(!(input in COMMANDS)) {
         output += `<div class="terminal-line">no such command: <span class="output">"${input}"</span></div>`;
@@ -81,7 +81,7 @@ function executeCommand(input) {
 const COMMANDS = {
     help:
       `Supported commands: ["<span class="code">about</span>", "<span class="code">experience</span>", "<span class="code">education</span>", 
-      "<span class="code">skills</span>", "<span class="code">contact</span>"]`,
+      "<span class="code">projects</span>", "<span class="code">skills</span>", "<span class="code">contact</span>]`,
     about:
       `Hi! 👋<br>I'm Ibrahim Chhaya. I am a Privacy Engineering student at Carnegie Mellon University. I was previously a software engineer, 
       but still code for fun. Check out my <span class="code">projects</span>.`,
@@ -99,9 +99,9 @@ const COMMANDS = {
       "",
     contact:
       `Connect with me on <a target="_blank" href="https://www.linkedin.com/in/ibrahimchhaya/">LinkedIn</a>, 
-      or view my projects on <a target="_blank" href="https://www.linkedin.com/in/ibrahimchhaya/">GitHub</a>`,
+      or view my projects on <a target="_blank" href="https://github.com/IbrahimChhaya/">GitHub</a>`,
     projects:
-      `Check out my <a target="_blank" href="https://www.linkedin.com/in/ibrahimchhaya/">GitHub</a><br>
+      `Check out my <a target="_blank" href="https://github.com/IbrahimChhaya/">GitHub</a><br>
       <span class="code">Enhancing Health Device Privacy with Federated Learning and k-Anonymity:</span> De-identified private health device dataset using 
       k-anonymity and utilised edge-device machine learning through Federated Learning to enhance user privacy<br>
       <span class="code">Plant App: </span> A Vue.JS and Quasar hybrid app to help keep track of plants at home. Used various AWS services to store and deploy<br>
@@ -115,6 +115,7 @@ const COMMANDS = {
       winner of the University of Johannesburg's 2020 Projects Day under the Second-Year group project category<br>
       <span class="code">Ball Roller Game (2019): </span> A mobile game created in the Unity game engine. 
       An infinite rolling game with dynamically generated platforms.`,
+    meow: "meow",
     exit:
       "<span class='danger'>THERE IS NO ESCAPE</span>",
     quit:

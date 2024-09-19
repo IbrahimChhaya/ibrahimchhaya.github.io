@@ -34,12 +34,8 @@ a:hover {
   font-weight: 500;
 }
 
-.success {
-  color: #8dd39e;
-}
-
 .code {
-  color: #6a88f6;
+  color: #8dd39e;
 }
 
 .danger {
