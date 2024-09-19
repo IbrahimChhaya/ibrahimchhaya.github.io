@@ -1,7 +1,7 @@
 body {
   margin: 10px;
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'Courier New', monospace;
   color: #333d54;
   background-color: #0d0f17;
 }
@@ -42,7 +42,7 @@ a:hover {
 }
 
 .code {
-  color: #8dd39e;
+  color: #008F11;
 }
 
 .danger {

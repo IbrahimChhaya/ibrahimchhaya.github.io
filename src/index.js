@@ -74,8 +74,8 @@ function executeCommand(input) {
     terminalOutput.innerHTML = `${
       terminalOutput.innerHTML
     }<div class="terminal-line">${output}</div>`;
-    terminalOutput.scrollTop = terminalOutput.scrollHeight;
-    userInput.innerHTML = ""
+    userInput.innerHTML = "";
+    userInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
 const COMMANDS = {
