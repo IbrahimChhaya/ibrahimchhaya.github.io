@@ -2,27 +2,31 @@ userInput = document.getElementById("userInput");
 terminalOutput = document.getElementById("terminalOutput");
 dummyInput = document.getElementById("dummyInput");
 
-// document.onkeydown = function(event) {
-//     if(event.key == "Enter" && userInput.innerHTML != "") {
-//         executeCommand(userInput.innerHTML);
-//     }
+document.onkeydown = function(event) {
+    if(event.key == "Enter" && userInput.innerHTML != "") {
+        executeCommand(userInput.innerHTML);
+    }
+}
+
+// dummyInput.addEventListener('input', doInput);
+// function doInput(e) {
+  
+//   if( e.inputType == "insertText"){
+//     console.log( e.data );
+//   }
+  
+//   if( e.inputType == "deleteContentBackward"){
+//     console.log('Backspace');     
+//   }
+  
+//   if( e.inputType == "insertCompositionText"){
+//     console.log("meow" + e.data)
+//   }
 // }
 
-dummyInput.addEventListener('input', doInput);
-function doInput(e) {
-  
-  if( e.inputType == "insertText"){
-    console.log( e.data );
-  }
-  
-  if( e.inputType == "deleteContentBackward"){
-    console.log('Backspace');     
-  }
-  
-  if( e.inputType == "insertCompositionText"){
-    console.log("meow" + e.data)
-  }
-  
+function captureText() {
+  text = document.getElementById("dummyInput").value;
+  userInput.innerHTML += text;
 }
 
 // document.onkeydown = function(event) {
