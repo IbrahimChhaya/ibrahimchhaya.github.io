@@ -1,24 +1,54 @@
 userInput = document.getElementById("userInput");
 terminalOutput = document.getElementById("terminalOutput");
+dummyInput = document.getElementById("dummyInput");
 
-document.onkeydown = function(event) {
-    if(event.key == "Enter" && userInput.innerHTML != "") {
-        executeCommand(userInput.innerHTML);
-    }
+// document.onkeydown = function(event) {
+//     if(event.key == "Enter" && userInput.innerHTML != "") {
+//         executeCommand(userInput.innerHTML);
+//     }
+// }
+
+dummyInput.addEventListener('input', doInput);
+function doInput(e) {
+  
+  if( e.inputType == "insertText"){
+    console.log( e.data );
+  }
+  
+  if( e.inputType == "deleteContentBackward"){
+    console.log('Backspace');     
+  }
+  
+  if( e.inputType == "insertCompositionText"){
+    console.log("meow" + e.data)
+  }
+  
 }
 
-document.addEventListener('input', function(event){
-  console.log(event)
-  if(event.inputType == "deleteContentBackward") {
-      userInput.innerHTML = userInput.innerHTML.slice(0, -1);
-  }
-  else if(event.inputType == "insertParagraph" && userInput.innerHTML != "") {
-    executeCommand(userInput.innerHTML);
-  }
-  else if(event.data.length == 1 && userInput.innerHTML.length != 30) {
-    userInput.innerHTML += event.data;
-  }
-})
+// document.onkeydown = function(event) {
+//   if(event.key.length == 1 && userInput.innerHTML.length != 30) {
+//       userInput.innerHTML += event.key;
+//   }
+//   if(event.key == "Backspace" || event.key == "Delete") {
+//       userInput.innerHTML = userInput.innerHTML.slice(0, -1);
+//   }
+//   if(event.key == "Enter" && userInput.innerHTML != "") {
+//       executeCommand(userInput.innerHTML);
+//   }
+// }
+
+// document.addEventListener('input', function(event){
+//   console.log(event)
+//   if(event.inputType == "deleteContentBackward") {
+//       userInput.innerHTML = userInput.innerHTML.slice(0, -1);
+//   }
+//   else if(event.inputType == "insertParagraph" && userInput.innerHTML != "") {
+//     executeCommand(userInput.innerHTML);
+//   }
+//   else if(event.data.length == 1 && userInput.innerHTML.length != 30) {
+//     userInput.innerHTML += event.data;
+//   }
+// })
 
 focusMethod = function getFocus() {           
   document.getElementById("dummyInput").focus();
