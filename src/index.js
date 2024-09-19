@@ -5,8 +5,8 @@ dummyInput = document.getElementById("dummyInput");
 document.onkeydown = function(event) {
     if(event.key == "Enter" && userInput.innerHTML != "") {
         executeCommand(userInput.innerHTML);
+        document.getElementById("dummyInput").value = "";
     }
-    document.getElementById("dummyInput").value = "";
 }
 
 // dummyInput.addEventListener('input', doInput);
@@ -26,8 +26,8 @@ document.onkeydown = function(event) {
 // }
 
 function captureText() {
-  text = document.getElementById("dummyInput").value;
-  userInput.innerHTML = text;
+    text = document.getElementById("dummyInput").value;
+    userInput.innerHTML = text;
 }
 
 // document.onkeydown = function(event) {
@@ -56,7 +56,7 @@ function captureText() {
 // })
 
 focusMethod = function getFocus() {           
-  document.getElementById("dummyInput").focus();
+    document.getElementById("dummyInput").focus();
 }
 
 function executeCommand(input) {
@@ -119,4 +119,4 @@ const COMMANDS = {
       "<span class='danger'>THERE IS NO ESCAPE</span>",
     quit:
       "<span class='danger'>THERE IS NO ESCAPE</span>"
-  };
+};
