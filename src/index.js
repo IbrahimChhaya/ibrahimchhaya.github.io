@@ -96,7 +96,24 @@ const COMMANDS = {
       `MSc Information Technology Privacy Engineering - Carnegie Mellon University<br>
       BSc Hons Computer Science and Informatics - University of Johannesburg`,
     experience:
-      "",
+      `<h3>Software Developer (Jan 2023 - Aug 2023)</h3> 
+      <ul> <li>Developed a medical aid/insurance comparison website from scratch, from design to deployment following 
+      Agile methodologies and a Test Driven Development practice. Deployed applications on AWS and Azure.</li> 
+      <li>Built microservice system architectures with Java and the Spring Boot framework for both REST and SOAP APIs.</li> 
+      <li>Implemented web applications using React through Next.js and Angular, prioritizing privacy UX and compliance 
+      with privacy regulations.</li> 
+      <li>Mentored and coordinated a group of software development interns to deliver an in-house prototype solution.</li> </ul> 
+      <h3>Teaching Assistant/Tutor (Feb 2021 - Dec 2022)</h3> 
+      <ul> <li>Delivered practical tutorials on C++ and introductory computer science concepts.</li> 
+      <li>Evaluated weekly-due practical VB.NET, HTML/CSS, C#, and C++ assignments, tests, 
+      and exams for undergraduate students.</li> <li>Mentored second-year student Informatics project.</li> </ul> 
+      <h3>Co-Founder and Lead Engineer (Mar 2014 - Dec 2022)</h3> <ul> 
+      <li>Developed, designed, and maintained digital platforms for start-ups, educational institutions, 
+      and community forums.</li> </ul> <h3>Founder (May 2013 - Nov 2016)</h3> <ul> <li>Founder of one of the leading 
+      gaming media outlets in Africa, attracting over 100,000 monthly readers across digital channels.</li> 
+      <li>Covered the world's largest video game events, including E3, Gamescom, and the Tokyo Game Show, as well as 
+      local events rAge Expo and EGE SA.</li> <li>Negotiated large advertisement deals with game distributors for EA, 
+      Activision, and Xbox.</li> </ul>`,
     contact:
       `Connect with me on <a target="_blank" href="https://www.linkedin.com/in/ibrahimchhaya/">LinkedIn</a>, 
       or view my projects on <a target="_blank" href="https://github.com/IbrahimChhaya/">GitHub</a>`,
