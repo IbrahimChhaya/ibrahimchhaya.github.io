@@ -23,7 +23,7 @@ body.addEventListener('blur', function() {
 });
 
 dummyInput.addEventListener('input', function() { 
-    text = document.getElementById("dummyInput").value;
+    let text = dummyInput.value;
     userInput.innerHTML = text;
 });
   
