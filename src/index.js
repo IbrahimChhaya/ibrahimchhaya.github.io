@@ -40,7 +40,7 @@ dummyInput.addEventListener('input', function() {
 function executeCommand(input) {
     input = input.toLowerCase();
 
-    output = `<div class="terminal-line"><span class="code">user@ibrahimchhaya.com:</span>
+    let output = `<div class="terminal-line"><span class="code">user@ibrahimchhaya.com:</span>
       <span class="directory">~</span>` + input + `</div>`;
     
     if(input.substring(0, 7) == 'chat -m') {
@@ -62,7 +62,7 @@ function executeCommand(input) {
 }
 
 function writeLLM(text) {
-    output = `<div class="output"> ${text} </div>`;
+    let output = `<div class="output"> ${text} </div>`;
     terminalOutput.innerHTML = `${
         terminalOutput.innerHTML
       }<div class="terminal-line">${output}</div>`;
