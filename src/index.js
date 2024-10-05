@@ -1,3 +1,6 @@
+import {LLM} from './llm/llm.js';
+
+model_loaded = false;
 userInput = document.getElementById("userInput");
 terminalOutput = document.getElementById("terminalOutput");
 dummyInput = document.getElementById("dummyInput");
@@ -9,51 +12,10 @@ document.onkeydown = function(event) {
     }
 }
 
-// dummyInput.addEventListener('input', doInput);
-// function doInput(e) {
-  
-//   if( e.inputType == "insertText"){
-//     console.log( e.data );
-//   }
-  
-//   if( e.inputType == "deleteContentBackward"){
-//     console.log('Backspace');     
-//   }
-  
-//   if( e.inputType == "insertCompositionText"){
-//     console.log("meow" + e.data)
-//   }
-// }
-
 function captureText() {
     text = document.getElementById("dummyInput").value;
     userInput.innerHTML = text;
 }
-
-// document.onkeydown = function(event) {
-//   if(event.key.length == 1 && userInput.innerHTML.length != 30) {
-//       userInput.innerHTML += event.key;
-//   }
-//   if(event.key == "Backspace" || event.key == "Delete") {
-//       userInput.innerHTML = userInput.innerHTML.slice(0, -1);
-//   }
-//   if(event.key == "Enter" && userInput.innerHTML != "") {
-//       executeCommand(userInput.innerHTML);
-//   }
-// }
-
-// document.addEventListener('input', function(event){
-//   console.log(event)
-//   if(event.inputType == "deleteContentBackward") {
-//       userInput.innerHTML = userInput.innerHTML.slice(0, -1);
-//   }
-//   else if(event.inputType == "insertParagraph" && userInput.innerHTML != "") {
-//     executeCommand(userInput.innerHTML);
-//   }
-//   else if(event.data.length == 1 && userInput.innerHTML.length != 30) {
-//     userInput.innerHTML += event.data;
-//   }
-// })
 
 focusMethod = function getFocus() {           
     document.getElementById("dummyInput").focus();
@@ -64,7 +26,12 @@ function executeCommand(input) {
 
     output = `<div class="terminal-line"><span class="code">user@ibrahimchhaya.com:</span>
       <span class="directory">~</span> ${input}</div>`;
-    if(!(input in COMMANDS)) {
+    
+    if(input.substring(0, 7) == 'chat -m') {
+        runLLM(input.substring(7));
+        return;
+    }
+    else if(!(input in COMMANDS)) {
         output += `<div class="terminal-line">no such command: <span class="output">"${input}"</span></div>`;
     }
     else {
@@ -76,6 +43,15 @@ function executeCommand(input) {
     }<div class="terminal-line">${output}</div>`;
     userInput.innerHTML = "";
     userInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+function writeLLM(text) {
+    output = `<div class="output"> ${text} </div>`;
+    terminalOutput.innerHTML = `${
+        terminalOutput.innerHTML
+      }<div class="terminal-line">${output}</div>`;
+      userInput.innerHTML = "";
+      userInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
 const COMMANDS = {
@@ -138,3 +114,42 @@ const COMMANDS = {
     quit:
       "<span class='danger'>THERE IS NO ESCAPE</span>"
 };
+
+const on_loaded = () => {
+    model_loaded = true;
+}
+
+const write_result = (text) => { writeLLM(text); }
+const run_complete = () => {}
+
+// Configure LLM app
+const app = new LLM(
+    // Type of Model
+   'GGUF_CPU',
+
+   // Model URL
+   'https://huggingface.co/Qwen/Qwen2-0.5B-Instruct-GGUF/resolve/main/qwen2-0_5b-instruct-q4_0.gguf',
+
+   // Model Load callback function
+   on_loaded,          
+
+   // Model Result callback function
+   write_result,       
+
+    // On Model completion callback function
+   run_complete       
+);
+
+// Download & Load Model GGML bin file
+app.load_worker();
+
+function runLLM(prompt) {
+    if(model_loaded){
+            app.run({
+            prompt: prompt,
+            top_k: 1
+        });
+    } else{
+        console.log('Waiting...')
+    }
+}
