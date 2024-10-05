@@ -1,6 +1,6 @@
 import {LLM} from './llm/llm.js';
 
-model_loaded = false;
+var model_loaded = false;
 userInput = document.getElementById("userInput");
 terminalOutput = document.getElementById("terminalOutput");
 dummyInput = document.getElementById("dummyInput");
