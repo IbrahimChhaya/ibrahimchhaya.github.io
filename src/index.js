@@ -41,7 +41,7 @@ function executeCommand(input) {
     input = input.toLowerCase();
 
     let output = `<div class="terminal-line"><span class="code">user@ibrahimchhaya.com:</span>
-      <span class="directory">~</span>` + input + `</div>`;
+      <span class="directory">~</span>${input}</div>`;
     
     if(input.substring(0, 7) == 'chat -m') {
         runLLM(input.substring(7));
