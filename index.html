@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   </head>
-  <body onclick="focusMethod()" onblur="focusMethod()">
+  <body id="body">
     <div class="terminal-output" id="terminalOutput">
       <div class="terminal-line">
         <pre class="ascii-name">
@@ -48,7 +48,7 @@
       <span class="user-input" id="userInput"></span>
       <input class="dummy-input" id="dummyInput" type="text" autofocus 
         autocapitalize="none" autocomplete="off" autocorrect="off" 
-        spellcheck="false" oninput="captureText()">
+        spellcheck="false">
     </div>
     <script src="./src/index.js" type="module"></script>
   </body>

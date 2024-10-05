@@ -12,14 +12,30 @@ document.onkeydown = function(event) {
     }
 }
 
-function captureText() {
+const body = document.getElementById('body');
+
+body.addEventListener('click', function() {
+    document.getElementById("dummyInput").focus();
+});
+
+body.addEventListener('blur', function() {
+    document.getElementById("dummyInput").focus();
+});
+
+dummyInput.addEventListener('input', function() { 
     text = document.getElementById("dummyInput").value;
     userInput.innerHTML = text;
-}
+});
+  
 
-focusMethod = function getFocus() {           
-    document.getElementById("dummyInput").focus();
-}
+// function captureText() {
+//     text = document.getElementById("dummyInput").value;
+//     userInput.innerHTML = text;
+// }
+
+// focusMethod = function getFocus() {           
+//     document.getElementById("dummyInput").focus();
+// }
 
 function executeCommand(input) {
     input = input.toLowerCase();
